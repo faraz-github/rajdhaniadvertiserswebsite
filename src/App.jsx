@@ -1,7 +1,16 @@
+import { ThemeProvider } from "@mui/material";
+
+import { theme } from "./MUI/theme";
 import "./App.css";
 
+import Header from "./components/Header/Header";
+
 function App() {
-  return <h1>Rajdhani Advertisers</h1>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Header />
+    </ThemeProvider>
+  );
 }
 
 export default App;
