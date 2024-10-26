@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
   shape: {
-    borderRadius: 4,
+    borderRadius: 2,
   },
   palette: {
     primary: {
@@ -20,13 +20,34 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: '"Jost", sans-serif',
+    h1: {
+      fontSize: 40,
+      fontWeight: 700,
+    },
+    h2: {
+      fontSize: 32,
+      fontWeight: 700,
+    },
     h3: {
       fontSize: 24,
+      fontWeight: 700,
+    },
+    h4: {
+      fontSize: 20,
       fontWeight: 700,
     },
     body1: {
       fontSize: 18,
       fontWeight: 500,
+    },
+    body2: {
+      fontSize: 16,
+      fontWeight: 400,
+    },
+    button: {
+      fontSize: 20,
+      fontWeight: 700,
+      textTransform: "none",
     },
   },
 });

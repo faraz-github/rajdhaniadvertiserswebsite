@@ -1,0 +1,20 @@
+/* Hero Section - HeroVisual Component */
+@keyframes flipBillboard {
+  0%,
+  20% {
+    transform: scaleX(1); /* Normal state */
+  }
+  30%,
+  50% {
+    transform: scaleX(-1); /* Flipped state */
+  }
+  70%,
+  100% {
+    transform: scaleX(1); /* Back to normal */
+  }
+}
+
+.billboard {
+  animation: flipBillboard 4s infinite; /* Adjust total duration as needed */
+  transition: transform 0.5s ease; /* Optional for smoother transitions */
+}
