@@ -19,6 +19,7 @@ const PortfolioSection = () => {
           <Typography
             variant="h2"
             color="primary"
+            fontSize={{ xs: 24, md: 32 }}
             textAlign="center"
             gutterBottom
           >
@@ -27,6 +28,7 @@ const PortfolioSection = () => {
           <Typography
             variant="body2"
             color="primary"
+            fontSize={{ xs: 14, md: 16 }}
             textAlign="center"
             gutterBottom
           >
@@ -55,6 +57,7 @@ const PortfolioSection = () => {
         <Typography
           variant="h2"
           color="primary"
+          fontSize={{ xs: 24, md: 32 }}
           textAlign="center"
           gutterBottom
           marginTop={{ xs: 5, md: 10 }}
@@ -112,6 +115,7 @@ const PortfolioSection = () => {
               style={{
                 width: 150,
                 height: "auto",
+                paddingRight: "16px",
               }}
             />
           </Stack>
