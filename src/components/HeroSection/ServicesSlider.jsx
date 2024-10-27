@@ -1,10 +1,18 @@
-import { Box, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+
 import ServiceCard from "./ServiceCard";
 
 const ServicesSlider = () => {
+  const isNotDesktop = useMediaQuery("(max-width:1200px)");
   return (
     <Box>
-      <Box>
+      <Container disableGutters={isNotDesktop ? false : true}>
         <Typography
           variant="h2"
           fontSize={{ xs: 24, md: 32 }}
@@ -22,25 +30,32 @@ const ServicesSlider = () => {
           Our services include billboards, transit ads, and custom signage
           designed to amplify your brand&apos;s presence.
         </Typography>
-      </Box>
-      <Stack
-        direction={"row"}
-        spacing={2}
-        sx={{ overflow: "hidden", overflowX: "scroll" }}
-        mt={2}
-        justifyContent={"space-between"}
+      </Container>
+      <Container
+        disableGutters={isNotDesktop ? false : true}
+        sx={{ overflow: "hidden", overflowX: { xs: "scroll", md: "auto" } }}
       >
-        <ServiceCard imageURL="/images/hoarding-bg-min.jpg" title="Hoarding" />
-        <ServiceCard imageURL="/images/signage-bg-min.jpg" title="Signage" />
-        <ServiceCard
-          imageURL="/images/wallad-bg-min.jpg"
-          title="Transit Ad | Wall Ad"
-        />
-        <ServiceCard
-          imageURL="/images/billboard-bg-min.jpg"
-          title="Billboard"
-        />
-      </Stack>
+        <Stack
+          direction={"row"}
+          spacing={2}
+          mt={2}
+          justifyContent={"space-between"}
+        >
+          <ServiceCard
+            imageURL="/images/hoarding-bg-min.jpg"
+            title="Hoarding"
+          />
+          <ServiceCard imageURL="/images/signage-bg-min.jpg" title="Signage" />
+          <ServiceCard
+            imageURL="/images/wallad-bg-min.jpg"
+            title="Transit Ad | Wall Ad"
+          />
+          <ServiceCard
+            imageURL="/images/billboard-bg-min.jpg"
+            title="Billboard"
+          />
+        </Stack>
+      </Container>
     </Box>
   );
 };
