@@ -17,6 +17,7 @@ export const theme = createTheme({
     },
     brandRed: "#B31312",
     brandOrange: "#EA906C",
+    brandOrangeLight: "rgba(234, 144, 108, 0.5)",
   },
   typography: {
     fontFamily: '"Jost", sans-serif',
@@ -35,6 +36,10 @@ export const theme = createTheme({
     h4: {
       fontSize: 20,
       fontWeight: 700,
+    },
+    h5: {
+      fontSize: 16,
+      fontWeight: 500,
     },
     body1: {
       fontSize: 18,

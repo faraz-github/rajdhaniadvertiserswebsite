@@ -6,8 +6,12 @@ const CustomRedButton = ({ buttonTitle, disableElevation, onClickHandler }) => {
     <Button
       variant={"contained"}
       disableElevation={disableElevation}
-      sx={{ background: (theme) => theme.palette.brandRed }}
+      sx={{
+        background: (theme) => theme.palette.brandRed,
+        borderRadius: (theme) => theme.shape.borderRadius,
+      }}
       onClick={onClickHandler}
+      type="submit"
     >
       {buttonTitle}
     </Button>
@@ -21,8 +25,10 @@ const CustomRedOutlinedButton = ({ buttonTitle, onClickHandler }) => {
       sx={{
         borderColor: (theme) => theme.palette.brandRed,
         color: (theme) => theme.palette.brandRed,
+        borderRadius: (theme) => theme.shape.borderRadius
       }}
       onClick={onClickHandler}
+      type="submit"
     >
       {buttonTitle}
     </Button>
