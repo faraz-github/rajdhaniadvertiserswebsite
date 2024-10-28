@@ -11,18 +11,18 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const FAQAccordion = ({ question, answer }) => {
   return (
     <div>
-      <Accordion variant="outlined">
+      <Accordion variant="outlined" sx={{ backgroundColor: "secondary.main" }}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          <Typography variant="h4" fontSize={{ xs: 12, md: 20 }}>
+          <Typography variant="h4" color="primary" fontSize={{ xs: 12, md: 20 }}>
             {question}
           </Typography>
         </AccordionSummary>
-        <AccordionDetails >
-          <Typography variant="body2" fontSize={{ xs: 14, md: 16 }}>
+        <AccordionDetails>
+          <Typography variant="body2" color="primary" fontSize={{ xs: 14, md: 16 }}>
             {answer}
           </Typography>
         </AccordionDetails>
