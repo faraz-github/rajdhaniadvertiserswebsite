@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 import { Stack, Typography } from "@mui/material";
+
 import OutdoorAdvertisingModal from "../modals/OutdoorAdvertisingModal";
 import AboutUsModal from "../modals/AboutUsModal";
+import AdNowModal from "../modals/AdNowModal";
 
 const QuickLinks = () => {
   const [openOutdoorAdsModal, setOpenOutdoorAdsModal] = useState(false);
   const [openAboutUsModal, setOpenAboutUsModal] = useState(false);
+  const [openAdNowModal, setOpenAdNowModal] = useState(false);
 
   return (
     <>
@@ -58,15 +60,15 @@ const QuickLinks = () => {
             Contact Us
           </Typography>
           <Typography
-            component={Link}
-            to={"/ad-now"}
             variant="body2"
             color="primary.light"
             sx={{
               "&:hover": {
                 color: "primary.dark",
+                cursor: "pointer",
               },
             }}
+            onClick={() => setOpenAdNowModal(true)}
           >
             Ad Now
           </Typography>
@@ -77,6 +79,7 @@ const QuickLinks = () => {
         setOpen={setOpenOutdoorAdsModal}
       />
       <AboutUsModal open={openAboutUsModal} setOpen={setOpenAboutUsModal} />
+      <AdNowModal open={openAdNowModal} setOpen={setOpenAdNowModal} />
     </>
   );
 };

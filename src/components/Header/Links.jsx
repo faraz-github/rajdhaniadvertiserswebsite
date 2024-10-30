@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 import { Stack, Typography } from "@mui/material";
 
 import OutdoorAdvertisingModal from "../modals/OutdoorAdvertisingModal";
 import AboutUsModal from "../modals/AboutUsModal";
+import AdNowModal from "../modals/AdNowModal";
 
 const Links = ({ closeDrawerOnClick }) => {
   const [openOutdoorAdsModal, setOpenOutdoorAdsModal] = useState(false);
   const [openAboutUsModal, setOpenAboutUsModal] = useState(false);
+  const [openAdNowModal, setOpenAdNowModal] = useState(false);
 
   return (
     <>
@@ -61,16 +62,15 @@ const Links = ({ closeDrawerOnClick }) => {
           Contact
         </Typography>
         <Typography
-          component={Link}
-          to={"/ad-now"}
           variant="body1"
           color="primary.light"
           sx={{
             "&:hover": {
               color: "primary.dark",
+              cursor: "pointer",
             },
           }}
-          onClick={closeDrawerOnClick}
+          onClick={() => setOpenAdNowModal(true)}
         >
           Ad Now
         </Typography>
@@ -80,6 +80,7 @@ const Links = ({ closeDrawerOnClick }) => {
         setOpen={setOpenOutdoorAdsModal}
       />
       <AboutUsModal open={openAboutUsModal} setOpen={setOpenAboutUsModal} />
+      <AdNowModal open={openAdNowModal} setOpen={setOpenAdNowModal} />
     </>
   );
 };
