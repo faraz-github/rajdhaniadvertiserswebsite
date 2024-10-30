@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import { Stack, Typography } from "@mui/material";
 import OutdoorAdvertisingModal from "../modals/OutdoorAdvertisingModal";
@@ -43,8 +44,9 @@ const QuickLinks = () => {
             About Us
           </Typography>
           <Typography
-            component={Link}
-            to={"/contact-us"}
+            component={HashLink}
+            to={"#contact"}
+            smooth
             variant="body2"
             color="primary.light"
             sx={{

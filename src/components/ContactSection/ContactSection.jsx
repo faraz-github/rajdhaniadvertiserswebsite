@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 
 const ContactSection = () => {
   return (
-    <Container sx={{ py: { xs: 5, md: 10 } }}>
+    <Container id="contact" sx={{ py: { xs: 5, md: 10 } }}>
       <Typography
         variant="h2"
         color="secondary"

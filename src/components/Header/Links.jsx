@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import { Stack, Typography } from "@mui/material";
 
@@ -45,8 +46,9 @@ const Links = ({ closeDrawerOnClick }) => {
           About Us
         </Typography>
         <Typography
-          component={Link}
-          to={"/contact-us"}
+          component={HashLink}
+          to={"#contact"}
+          smooth
           variant="body1"
           color="primary.light"
           sx={{

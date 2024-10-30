@@ -3,7 +3,10 @@ import { CustomRedButton, CustomRedOutlinedButton } from "../ui/CustomButtons";
 
 const HeroCTA = () => {
   const enquireNowHandler = () => {
-    console.log("Enquire now");
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
   const adTodayHandler = () => {
     console.log("Ad Today");
