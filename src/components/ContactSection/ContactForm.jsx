@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 import { Box, FormLabel, Stack, TextField, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -12,6 +13,7 @@ const ContactForm = () => {
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
   const { name, email, phone, message } = formData;
 
   const onChangeHandler = (event) => {
@@ -23,12 +25,28 @@ const ContactForm = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log({ formData });
+    setLoading(true);
+
     const phoneRegex = /^(?:\+91)?\d{10}$/;
     if (phoneRegex.test(phone)) {
-      alert("Phone number is valid!");
+      try {
+        const apiKey =
+          "ab686dde04985d9263e440295d2b3c6d08331fa8d15cca52d2ca2b1dcd495b8f";
+        const response = await axios.post(
+          `http://localhost:5000/api/contact-form/rajdhani-advertisers/${apiKey}/create`,
+          formData
+        );
+        console.log("Response:", response.data);
+        alert("Contact form submitted successfully!");
+        setLoading(false);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("There was an error submitting the form. Please try again.");
+        setLoading(false);
+      }
     } else {
       alert("Please enter a valid Indian phone number.");
+      setLoading(false);
     }
   };
 
@@ -133,7 +151,7 @@ const ContactForm = () => {
             />
           </Box>
           <Stack direction={"row"} justifyContent={"flex-end"}>
-            <CustomRedButton buttonTitle="Send Message" />
+            <CustomRedButton buttonTitle="Send Message" disabled={loading} />
           </Stack>
         </Stack>
       </form>
