@@ -18,6 +18,7 @@ export const theme = createTheme({
     brandRed: "#B31312",
     brandOrange: "#EA906C",
     brandOrangeLight: "rgba(234, 144, 108, 0.5)",
+    brandPurpleLight: "rgb(43, 42, 76, 0.8)",
   },
   typography: {
     fontFamily: '"Jost", sans-serif',
