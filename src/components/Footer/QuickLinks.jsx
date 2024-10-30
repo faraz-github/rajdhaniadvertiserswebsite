@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 import { Stack, Typography } from "@mui/material";
 import OutdoorAdvertisingModal from "../modals/OutdoorAdvertisingModal";
+import AboutUsModal from "../modals/AboutUsModal";
 
 const QuickLinks = () => {
   const [openOutdoorAdsModal, setOpenOutdoorAdsModal] = useState(false);
+  const [openAboutUsModal, setOpenAboutUsModal] = useState(false);
 
   return (
     <>
@@ -28,15 +30,15 @@ const QuickLinks = () => {
             Outdoor Advertising
           </Typography>
           <Typography
-            component={Link}
-            to={"/about-us"}
             variant="body2"
             color="primary.light"
             sx={{
               "&:hover": {
                 color: "primary.dark",
+                cursor: "pointer",
               },
             }}
+            onClick={() => setOpenAboutUsModal(true)}
           >
             About Us
           </Typography>
@@ -72,6 +74,7 @@ const QuickLinks = () => {
         open={openOutdoorAdsModal}
         setOpen={setOpenOutdoorAdsModal}
       />
+      <AboutUsModal open={openAboutUsModal} setOpen={setOpenAboutUsModal} />
     </>
   );
 };

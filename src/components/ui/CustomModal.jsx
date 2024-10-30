@@ -27,10 +27,9 @@ const CustomModal = ({ width, height, open, setOpen, children }) => {
           <IconButton
             color="error"
             onClick={() => setOpen(false)}
-            sx={{ position: "absolute", top: "8px", right: "8px", zIndex: 112, }}
-            
+            sx={{ position: "absolute", top: "8px", right: "8px", zIndex: 112 }}
           >
-            <CloseIcon />
+            <CloseIcon fontSize="large" />
           </IconButton>
           {children}
         </Box>

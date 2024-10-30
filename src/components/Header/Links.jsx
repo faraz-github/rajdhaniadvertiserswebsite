@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import { Stack, Typography } from "@mui/material";
 
 import OutdoorAdvertisingModal from "../modals/OutdoorAdvertisingModal";
+import AboutUsModal from "../modals/AboutUsModal";
 
 const Links = ({ closeDrawerOnClick }) => {
   const [openOutdoorAdsModal, setOpenOutdoorAdsModal] = useState(false);
+  const [openAboutUsModal, setOpenAboutUsModal] = useState(false);
 
   return (
     <>
@@ -20,6 +22,7 @@ const Links = ({ closeDrawerOnClick }) => {
           variant="body1"
           color="primary.light"
           sx={{
+            cursor: "pointer",
             "&:hover": {
               color: "primary.dark",
             },
@@ -29,16 +32,15 @@ const Links = ({ closeDrawerOnClick }) => {
           Outdoor Advertising
         </Typography>
         <Typography
-          component={Link}
-          to={"/about-us"}
           variant="body1"
           color="primary.light"
           sx={{
+            cursor: "pointer",
             "&:hover": {
               color: "primary.dark",
             },
           }}
-          onClick={closeDrawerOnClick}
+          onClick={() => setOpenAboutUsModal(true)}
         >
           About Us
         </Typography>
@@ -75,6 +77,7 @@ const Links = ({ closeDrawerOnClick }) => {
         open={openOutdoorAdsModal}
         setOpen={setOpenOutdoorAdsModal}
       />
+      <AboutUsModal open={openAboutUsModal} setOpen={setOpenAboutUsModal} />
     </>
   );
 };
