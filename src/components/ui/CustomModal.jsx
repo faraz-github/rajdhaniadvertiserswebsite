@@ -3,13 +3,20 @@ import PropTypes from "prop-types";
 import { Box, IconButton, Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-const CustomModal = ({ width, height, open, setOpen, children }) => {
+const CustomModal = ({ width, height, open, setOpen, freeze, children }) => {
   return (
     <Modal
       open={open}
       onClose={() => setOpen(false)}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
+      slotProps={{
+        backdrop: {
+          sx: {
+            backdropFilter: "blur(4px)",
+          },
+        },
+      }}
     >
       <>
         <Box
@@ -27,7 +34,13 @@ const CustomModal = ({ width, height, open, setOpen, children }) => {
           <IconButton
             color="error"
             onClick={() => setOpen(false)}
-            sx={{ position: "absolute", top: "8px", right: "8px", zIndex: 112 }}
+            sx={{
+              position: "absolute",
+              top: "8px",
+              right: "8px",
+              zIndex: 112,
+              display: freeze ? "none" : "flex",
+            }}
           >
             <CloseIcon fontSize="large" />
           </IconButton>
@@ -51,6 +64,7 @@ CustomModal.propTypes = {
   ]),
   open: PropTypes.bool,
   setOpen: PropTypes.func,
+  freeze: PropTypes.bool,
   children: PropTypes.node,
 };
 
